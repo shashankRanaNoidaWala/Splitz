@@ -19,4 +19,14 @@ class Group(
     fun reset(){
         people = (emptyList<Person>() as MutableList<Person>)
     }
+
+    fun to_string():String{
+        var str:String =""
+        var counter = 0
+        while(counter<people.size) {
+            str = str + people[counter].name + " "
+            counter++
+        }
+        return str
+    }
 }
