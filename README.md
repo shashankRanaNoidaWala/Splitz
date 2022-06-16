@@ -6,3 +6,4 @@ We are sorry about it
 
 Currently it is just a recycle view, containing the list of predefined groups, and is single screen.
 Delete button doesn't works.
+(yeh version lite, next version phdenge)
