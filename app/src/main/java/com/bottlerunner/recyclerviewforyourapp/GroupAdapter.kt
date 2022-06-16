@@ -10,28 +10,29 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class
-TodoAdapter(var context: Context, var groups: List<Group>): RecyclerView.Adapter<GroupAdapter.GroupViewHolder>(){
+GroupAdapter(var context: Context, var groups: List<Group>): RecyclerView.Adapter<GroupAdapter.GroupViewHolder>(){
 
 
     inner class GroupViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GroupViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_todo, parent, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.group_card, parent, false)
         return GroupViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: GroupViewHolder, position: Int) {
 
         holder.itemView.apply {
-            val tvTitle: TextView = this.findViewById(R.id.tvTitle)
-            val cbDone: CheckBox = findViewById(R.id.cbDone)
-            tvTitle.text = todos[position].title
-            cbDone.isChecked = todos[position].checked
+            val tvGroupName: TextView = this.findViewById(R.id.tvGroupName)
+            val tvMembers: TextView=this.findViewById(R.id.tvMembers)
+            tvGroupName.text = groups[position].name
+            tvMembers.text = (groups[position].to_string())
         }
     }
 
     override fun getItemCount(): Int {
-        Log.d("Peroblem", "Itme count ${todos.size}")
-        return todos.size
+        return groups.size
     }
+
+
 }

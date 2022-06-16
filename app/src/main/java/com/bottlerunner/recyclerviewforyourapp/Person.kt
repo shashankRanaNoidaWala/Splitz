@@ -1,6 +1,6 @@
 package com.bottlerunner.recyclerviewforyourapp
 
-class Person(var name:Int, var balance:Double) {
+class Person(var name:String, var balance:Double) {
 
     fun reset(){
         balance = 0.0
